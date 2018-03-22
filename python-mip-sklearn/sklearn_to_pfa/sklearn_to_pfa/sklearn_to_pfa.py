@@ -89,8 +89,6 @@ action:
         input_record=input_record, featurizer=featurizer, functions=_functions()
     ).strip()
 
-    import ipdb; ipdb.set_trace()
-
     # compile
     pfa = titus.prettypfa.jsonNode(pretty_pfa)
 

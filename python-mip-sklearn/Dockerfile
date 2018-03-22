@@ -22,6 +22,7 @@ COPY requirements.txt /
 COPY docker-entrypoint.sh /
 
 RUN pip install -r /requirements.txt
+RUN pip install git+https://github.com/Marigold/hadrian.git@light#subdirectory=titus
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["compute"]
