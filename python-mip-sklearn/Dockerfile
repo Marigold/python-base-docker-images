@@ -24,5 +24,9 @@ COPY docker-entrypoint.sh /
 RUN pip install -r /requirements.txt
 RUN pip install git+https://github.com/Marigold/hadrian.git@light#subdirectory=titus
 
+# NOTE: this is only for prototyping, should be installed from pypi once it gets stable
+COPY sklearn_to_pfa /sklearn_to_pfa
+RUN cd sklearn_to_pfa && python setup.py install
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["compute"]
